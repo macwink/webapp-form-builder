@@ -34,7 +34,7 @@ const FormBuilder = ({
   editing,
   helpPanelFn,
 }: FormBuilderProps) => {
-  const handleFieldChange = (fieldName, fieldValue, extraField) => {
+  const handleFieldChange = (fieldName: string, fieldValue: any, extraField: string | null) => {
     setFormData({
       ...formData,
       [fieldName]: fieldValue,
@@ -47,7 +47,7 @@ const FormBuilder = ({
       containerName: field.containerName,
       key: field.name,
       value: formData[field.name] || "",
-      onChange: (value) => handleFieldChange(field.name, value, null),
+      onChange: (value: any) => handleFieldChange(field.name, value, null),
       readOnly: !editing,
     };
 
